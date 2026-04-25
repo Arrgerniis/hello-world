@@ -1,0 +1,23 @@
+{
+  "lastUpdated": "2026-04-01",
+  "source": "Datos curados de referencia (CMF / comparadores). Use el botón \"Actualizar tasas\" para refrescar con un agente que consulta el mercado.",
+  "currency": "UF",
+  "ufValueClp": 39250,
+  "notes": "Tasas anuales en UF, sistema francés de amortización. Tasas referenciales para clientes con buen perfil crediticio y financiamiento del 80%. Cada banco evalúa caso a caso.",
+  "termRates": {
+    "8": 4.05,
+    "10": 4.15,
+    "15": 4.35,
+    "20": 4.55,
+    "25": 4.7,
+    "30": 4.85
+  },
+  "bankSamples": [
+    { "bank": "Banco de Chile", "termYears": 25, "annualRate": 4.65 },
+    { "bank": "Santander", "termYears": 25, "annualRate": 4.6 },
+    { "bank": "BCI", "termYears": 25, "annualRate": 4.75 },
+    { "bank": "BancoEstado", "termYears": 25, "annualRate": 4.55 },
+    { "bank": "Itaú", "termYears": 25, "annualRate": 4.7 },
+    { "bank": "Scotiabank", "termYears": 25, "annualRate": 4.8 }
+  ]
+}

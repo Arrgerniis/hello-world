@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de crédito hipotecario · Chile</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Calculadora de crédito hipotecario</h1>
+      <p class="subtitle">Chile · valores en UF · sistema francés de amortización</p>
+    </header>
+
+    <main class="layout">
+      <section class="card form-card" aria-labelledby="form-title">
+        <h2 id="form-title">Datos del crédito</h2>
+
+        <div class="field">
+          <label for="propertyPrice">Precio de la propiedad (UF)</label>
+          <input id="propertyPrice" type="number" min="100" step="50" value="4500" />
+        </div>
+
+        <div class="field">
+          <div class="field-header">
+            <label for="downPaymentPct">Pie</label>
+            <span class="field-value" id="downPaymentPctLabel">20%</span>
+          </div>
+          <input id="downPaymentPct" type="range" min="0" max="80" step="1" value="20" />
+          <div class="field-hint">
+            <span>Pie: <strong id="downPaymentUf">UF 900</strong></span>
+            <span>Crédito: <strong id="loanAmountUf">UF 3.600</strong></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field-header">
+            <label for="years">Plazo (años)</label>
+            <span class="field-value" id="yearsLabel">25</span>
+          </div>
+          <input id="years" type="range" min="5" max="30" step="1" value="25" />
+        </div>
+
+        <div class="field">
+          <div class="field-header">
+            <label for="annualRate">Tasa anual (%)</label>
+            <button id="refreshRatesBtn" type="button" class="link-btn" title="Consulta tasas vigentes con un agente">
+              Actualizar tasas
+            </button>
+          </div>
+          <input id="annualRate" type="number" min="0.1" max="20" step="0.05" value="4.7" />
+          <div class="field-hint">
+            <span id="ratesMeta">Tasa de referencia para 25 años</span>
+          </div>
+          <div id="refreshStatus" class="refresh-status" hidden></div>
+        </div>
+
+        <details class="advanced">
+          <summary>Parámetros avanzados (seguros e impuesto al mutuo)</summary>
+          <div class="grid-2">
+            <div class="field">
+              <label for="lifeInsuranceMonthlyPct">Desgravamen (% mensual sobre saldo)</label>
+              <input id="lifeInsuranceMonthlyPct" type="number" step="0.001" value="0.020" />
+            </div>
+            <div class="field">
+              <label for="fireInsuranceMonthlyPct">Incendio + sismo (% mensual sobre tasación)</label>
+              <input id="fireInsuranceMonthlyPct" type="number" step="0.001" value="0.025" />
+            </div>
+            <div class="field">
+              <label for="stampTaxPct">Impuesto al mutuo (% sobre crédito)</label>
+              <input id="stampTaxPct" type="number" step="0.01" value="0.8" />
+            </div>
+            <div class="field">
+              <label for="cbrPct">Inscripción CBR (% sobre precio)</label>
+              <input id="cbrPct" type="number" step="0.01" value="0.2" />
+            </div>
+          </div>
+        </details>
+
+        <button id="calcBtn" type="button" class="primary">Calcular</button>
+      </section>
+
+      <section class="card results-card" id="results" aria-live="polite">
+        <h2>Resultado</h2>
+        <p class="placeholder">Ingresa los datos y presiona <strong>Calcular</strong> para ver el dividendo, los costos asociados y la tabla de amortización.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Herramienta referencial. Los valores son estimativos y pueden variar según la evaluación
+        crediticia, el banco y las condiciones del mercado. No constituye una oferta financiera.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
